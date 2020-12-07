@@ -92,7 +92,7 @@ class GP:
     def run(self):
         random.seed(self.seed_num)
         pop = self.toolbox.population(n=self.pop_size)
-        hof = tools.HallOfFame(1)
+        hof = tools.HallOfFame(3)
         stats = tools.Statistics(lambda ind: ind.fitness.values)
         stats.register("avg", numpy.mean)
         stats.register("std", numpy.std)
@@ -124,5 +124,17 @@ class GP:
 
 
 if __name__ == "__main__":
+
     gp_sokoban = GP()
-    gp_sokoban.run()
+    pop, hof, stats = gp_sokoban.run()
+
+    file1 = open( " individual.txt", "a")
+    file1.write("Best Ever Individual = " + str(hof.items[0]) + "\n")
+    for item in hof.items:
+        file1.write("%s\n" % str(item))
+    file1.close()
+    # print Hall of Fame info:
+    print("Hall of Fame Individuals = ", *hof.items, sep="\n")
+    print("Best Ever Individual = ", hof.items[0])
+
+
