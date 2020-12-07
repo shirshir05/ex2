@@ -8,8 +8,11 @@ class Player:
         self.list_move = []
         self.fitness = float("inf")
 
+    def set_game(self, game):
+        self.game = game
+
     def play(self, routine):
-        #todo change range
+        # todo change range
         for i in range(0, 1000):
             routine()
         return self.list_move

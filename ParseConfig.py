@@ -1,4 +1,4 @@
-from Fitness import *
+from fitness import *
 from deap import tools
 from deap import gp
 

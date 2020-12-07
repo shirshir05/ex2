@@ -3,7 +3,7 @@ from configparser import ConfigParser
 
 import numpy as np
 from MeasureForFitness import MeasureForFitness
-from game import Game
+from Game import Game
 
 
 class Fitness:
