@@ -4,7 +4,7 @@ from Game import Game
 class Player:
 
     def __init__(self):
-        self.game = Game("one_input.txt", 1)
+        self.game = None
         self.list_move = []
         self.fitness = float("inf")
 
