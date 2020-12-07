@@ -1,7 +1,11 @@
 import pathlib
 from queue import Queue
 
-NUMBER_COL = 19
+
+
+# number col for all level
+dic_level_col = {1: 19, 2: 14, 3: 17, 4: 19, 5: 17, 6: 12, 7: 13, 8: 16, 9: 17, 10: 19,
+       11: 19, 12: 17, 13: 19, 14: 18, 15: 17, 16: 14, 17: 16, 18: 19, 19: 19, 20: 19}
 
 
 class Game:
@@ -25,9 +29,15 @@ class Game:
         file = open(str(pathlib.Path().absolute()) + '/File/' + name_file, 'r')
         level = 0
         level_found = False
+        index_level = 1
+        NUMBER_COL = dic_level_col[index_level]
         for line in file:
+            if level == number_level:
+                break
             if level_found:
                 level_found = False
+                index_level += 1
+                NUMBER_COL = dic_level_col[index_level]
                 continue
             elif line.find(";") == -1:
                 row = []
@@ -43,7 +53,6 @@ class Game:
                             row.append("")
                     else:
                         print("error input")
-
                 self.matrix[level].append(row)
             else:
                 level += 1
@@ -62,10 +71,10 @@ class Game:
             for j in range(0, len((self.matrix[i]))):
                 list_board[i].append(self.matrix[i][j])
         with open(str(name) + '.txt', 'a') as filehandle:
-            filehandle.write("epoch = %d,  " %epoch)
-            filehandle.write("worker_in_deadlock = %d,  " %worker_in_deadlock)
-            filehandle.write("euclidean_distance = %d " %euclidean_distance)
-            filehandle.write("count_left_box = %d " %count_left_box)
+            filehandle.write("epoch = %d,  " % epoch)
+            filehandle.write("worker_in_deadlock = %d,  " % worker_in_deadlock)
+            filehandle.write("euclidean_distance = %d " % euclidean_distance)
+            filehandle.write("count_left_box = %d " % count_left_box)
             for listitem in list_board:
                 for item in listitem:
                     filehandle.write('%s\n' % item)
@@ -205,7 +214,7 @@ class Game:
         return True
 
     def play(self, level, list_move):
-        #print("start")
+        # print("start")
         index = 0
         for move in list_move:
             if self.is_completed(level):
@@ -222,7 +231,6 @@ class Game:
         # self.print_board()
         return self.is_completed(level)  # True/ False
 
-
     @staticmethod
     def string_split():
         string = "ullluuuLUllDlldddrRRRRRRRRRRRRurDllllllllllllllulldRRRRRRRRRRRRRdrUluRRlldlllllluuululldDDuulldddrRRRRRRRRRRRRlllllllluuulLulDDDuulldddrRRRRRRRRRRRurDlllllllluuululuurDDllddddrrruuuLLulDDDuulldddrRRRRRRRRRRdrUluRldlllllluuuluuullDDDDDuulldddrRRRRRRRRRRR"
@@ -235,6 +243,7 @@ class Game:
 
 
 if __name__ == '__main__':
-    game = Game("one_input.txt", 1)
+    # game = Game("one_input.txt", 1)
+    game = Game("input.txt", 20)
     # game.print_board()
-    print(game.play(1, Game.string_split()))
+    # print(game.play(1, Game.string_split()))
