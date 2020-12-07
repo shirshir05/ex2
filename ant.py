@@ -59,7 +59,7 @@ from deap import creator
 from deap import tools
 from deap import gp
 
-from game import Game
+from Game import Game
 
 
 def progn(*args):
