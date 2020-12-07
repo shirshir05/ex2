@@ -6,11 +6,7 @@ class ParseConfig:
 
     def __init__(self, file_name):
         # <editor-fold desc="Dictionaries">
-        self.fitness_dict = {"AreaLengthFitness": AreaLengthFitness,
-                             "AbsDifferenceSolutionLengthFitness": AbsDifferenceSolutionLengthFitness,
-                             "SimpleDistanceFitness": SimpleDistanceFitness,
-                             "DistanceAndBox": DistanceAndBox,
-                             }
+        self.fitness_dict = {"Fitness": Fitness}
 
         self.crossover_dict = {"cxSemantic": gp.cxSemantic,
                                "cxOnePointLeafBiased": gp.cxOnePointLeafBiased,
