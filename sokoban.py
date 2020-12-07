@@ -3,149 +3,104 @@ from datetime import datetime
 
 from boto import sns
 from networkx.drawing.tests.test_pylab import plt
+from Game import Game
+from Player import Player
 from numpy.random._generator import default_rng
-
-from game import Game
-
 from functools import partial
 import numpy
-
 from deap import algorithms
 from deap import base
 from deap import creator
 from deap import tools
 from deap import gp
+from ParseConfig import ParseConfig
+from MeasureForFitness import MeasureForFitness
 
 
-def progn(*args):
-    for arg in args:
-        arg()
+class GP:
+    def progn(self, *args):
+        for arg in args:
+            arg()
 
+    def prog2(self, out1, out2):
+        return partial(self.progn, out1, out2)
 
-def prog2(out1, out2):
-    return partial(progn, out1, out2)
+    def prog3(self, out1, out2, out3):
+        return partial(self.progn, out1, out2, out3)
 
+    def if_then_else(self, condition, out1, out2):
+        out1() if condition() else out2()
 
-def prog3(out1, out2, out3):
-    return partial(progn, out1, out2, out3)
-
-
-def if_then_else(condition, out1, out2):
-    out1() if condition() else out2()
-
-
-class Player:
+    def evalPlayer(self, individual):
+        # Transform the tree expression to functionnal Python code
+        routine = gp.compile(individual, self.pset)
+        # Run the generated routine
+        list_move = self.player.play(routine)
+        fitness = 0
+        self.player.set_game(Game("input.txt", 20))
+        for level in self.train_set:
+            self.player.game.play(level + 1, list_move)
+            fitness += MeasureForFitness.euclidean_distance(self.player.game, ".", level + 1)
+        self.player.update_fitness(fitness)
+        return self.player.fitness,
 
     def __init__(self):
-        self.game = None
-        self.list_move = []
-        self.fitness = float("inf")
+        config = ParseConfig("File/config.ini")
+        self.pop_size = config.get_population_size()
+        self.seed_num = config.get_random_seed()
+        self.ngen = config.get_ngen()
+        self.crossover_prob = config.get_crossover_prob()
+        self.mutation_prob = config.get_mutation_prob()
+        self.fitness = config.get_fitness()
+        self.mate = config.get_crossover()
+        self.mutate = config.get_mutation()
 
-    def set_game(self, game):
-        self.game = game
+        self.player = Player()
+        self.pset = gp.PrimitiveSet("MAIN", 0)
 
-    def play(self, routine):
-        # todo change range
-        for i in range(0, 1000):
-            routine()
-        return self.list_move
+        # todo change
+        # pset.addPrimitive(ant.if_food_ahead, 2)
+        self.pset.addPrimitive(self.prog2, 2)
+        self.pset.addPrimitive(self.prog3, 3)
+        self.pset.addTerminal(self.player.move_left)
+        self.pset.addTerminal(self.player.move_right)
+        self.pset.addTerminal(self.player.move_down)
+        self.pset.addTerminal(self.player.move_up)
 
-    def move_up(self):
-        self.list_move.append("u")
+        creator.create("FitnessMin", base.Fitness, weights=(1.0,))
+        creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
 
-    def move_down(self):
-        self.list_move.append("d")
+        self.toolbox = base.Toolbox()
 
-    def move_right(self):
-        self.list_move.append("r")
+        # Attribute generator
+        self.toolbox.register("expr_init", gp.genFull, pset=self.pset, min_=1, max_=2)
 
-    def move_left(self):
-        self.list_move.append("l")
+        # Structure initializers
+        self.toolbox.register("individual", tools.initIterate, creator.Individual, self.toolbox.expr_init)
+        self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
 
-    def update_fitness(self, fitness):
-        self.fitness = fitness
+        # todo remove constant train and test? seed= 42
+        rng = default_rng(int(self.seed_num))
+        all_levels = range(0, 20)
+        self.train_set = rng.choice(20, size=14, replace=False)
+        self.test_set = [item for item in all_levels if item not in self.train_set]
 
+        self.toolbox.register("evaluate", self.evalPlayer)
+        self.toolbox.register("select", tools.selTournament, tournsize=7)
+        self.toolbox.register("mate", self.mate)
+        self.toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
+        self.toolbox.register("mutate", self.mutate, expr=self.toolbox.expr_mut, pset=self.pset)
 
-player = Player()
-
-pset = gp.PrimitiveSet("MAIN", 0)
-
-# todo change
-# pset.addPrimitive(ant.if_food_ahead, 2)
-pset.addPrimitive(prog2, 2)
-pset.addPrimitive(prog3, 3)
-
-pset.addTerminal(player.move_left)
-pset.addTerminal(player.move_right)
-pset.addTerminal(player.move_down)
-pset.addTerminal(player.move_up)
-
-creator.create("FitnessMin", base.Fitness, weights=(1.0,))
-creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
-
-toolbox = base.Toolbox()
-
-# Attribute generator
-toolbox.register("expr_init", gp.genFull, pset=pset, min_=1, max_=2)
-
-# Structure initializers
-toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.expr_init)
-toolbox.register("population", tools.initRepeat, list, toolbox.individual)
-
-# todo remove constant train and test? seed= 42
-rng = default_rng(42)
-all_levels = range(0, 20)
-train_set = rng.choice(20, size=14, replace=False)
-test_set = [item for item in all_levels if item not in train_set]
-
-
-def evalPlayer(individual):
-    def euclidean_distance(game, from_box, level, sum=False):
-        """
-            :Return
-                The minimum distance for box from the dock * self.Measure["euclidean_distance"]
-        """
-        min_distances = []
-        row_pos = -1
-        for row in game.matrix[level - 1]:
-            row_pos = row_pos + 1
-            col_pos = -1
-            for cell in row:
-                col_pos = col_pos + 1
-                if cell == '$':
-                    distances = []
-                    target_row_pos = -1
-                    for row_target in game.matrix[level - 1]:
-                        target_row_pos = target_row_pos + 1
-                        target_col_pos = -1
-                        for cell_target in row_target:
-                            target_col_pos = target_col_pos + 1
-                            if cell_target == from_box:
-                                d = numpy.sqrt(((row_pos - target_row_pos) ** 2) + ((col_pos - target_col_pos) ** 2))
-                                distances.append(d)
-                    min_d = numpy.min(distances)
-                    if min_d != 0:
-                        min_distances.append(min_d)
-        if sum:
-            score = numpy.sum(min_distances)
-        else:
-            score = numpy.min(min_distances)
-
-        return score
-
-    # Transform the tree expression to functionnal Python code
-    routine = gp.compile(individual, pset)
-    # Run the generated routine
-    list_move = player.play(routine)
-    fitness = 0
-    player.set_game(Game("input.txt", 20))
-    for level in train_set:
-        player.game.play(level + 1, list_move)
-        fitness += euclidean_distance(player.game, ".", level + 1)
-    player.update_fitness(fitness)
-    return player.fitness,
-
-
+    def run(self):
+        random.seed(self.seed_num)
+        pop = self.toolbox.population(n=self.pop_size)
+        hof = tools.HallOfFame(1)
+        stats = tools.Statistics(lambda ind: ind.fitness.values)
+        stats.register("avg", numpy.mean)
+        stats.register("std", numpy.std)
+        stats.register("med", numpy.median)
+        stats.register("min", numpy.min)
+        stats.register("max", numpy.max)
 toolbox.register("evaluate", evalPlayer)
 toolbox.register("select", tools.selTournament, tournsize=7)
 toolbox.register("mate", gp.cxOnePoint)
@@ -183,13 +138,23 @@ def main():
     stats.register("min", numpy.min)
     stats.register("max", numpy.max)
 
-    # 1.2 todo number level - shir - DONE!
-    # 1.3 todo add config - amit
-    # 1.4 todo name file - config param + time - amit
-    # 1.4 todo fitness - shir - DONE!
-    # 1.5 todo train and test - train each level ot as a group? - DONE!
-    # 1.1 todo graph
+        # 1.2 todo number level - shir - DONE!
+        # 1.3 todo add config - amit - DONE
+        # 1.4 todo name file - config param + time - amit
+        # 1.4 todo fitness - shir - DONE!
+        # 1.5 todo train and test - train each level ot as a group? - DONE!
+        # 1.1 todo graph
 
+        time_before = datetime.now()
+        # ngen = The number of generation
+        pop, logbook = algorithms.eaSimple(pop, self.toolbox,
+                                           cxpb=self.crossover_prob,
+                                           mutpb=self.mutation_prob,
+                                           ngen=self.ngen,
+                                           stats=stats,
+                                           halloffame=hof)
+
+        time = time_before.minute - datetime.now().minute
     time_before = datetime.now()
     # ngen = The number of generation
     pop, logbook = algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=5, stats=stats, halloffame=hof)
@@ -197,9 +162,11 @@ def main():
 
     # numpy.pickle.dump(logbook, open(f"File/logbook_{time}_{todo config}", 'wb'))
     create_plot(logbook)
+        # numpy.pickle.dump(logbook, open(f"File/logbook_{time}_{todo config}", 'wb'))
 
-    return pop, hof, stats
+        return pop, hof, stats
 
 
 if __name__ == "__main__":
-    main()
+    gp_sokoban = GP()
+    gp_sokoban.run()

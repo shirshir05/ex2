@@ -2,8 +2,8 @@ import sys
 from configparser import ConfigParser
 
 import numpy as np
+import Game
 from MeasureForFitness import MeasureForFitness
-from Game import Game
 
 
 class Fitness:
@@ -26,40 +26,41 @@ class Fitness:
 """
     in evaluate:
         self.measure.init(self.game, child)
-
+        
         function:
             # gen_length
            self.fitness -= self.measure.gen_length(self.gen_length)
-
+           
             # is_completed
             if self.game.is_completed(level=1):
                 return 0
-
+                
             # worker_in_deadlock
             self.fitness += self.measure.worker_in_deadlock(level=1)
-
+            
             # count_left_box
             self.fitness += self.measure.count_left_box(level=1)
-
+            
             # euclidean_distance
             self.fitness += self.measure.euclidean_distance('.')
-
+            
             # box left - Absolute distance
             range_min_difference = 0
             range_max_difference = 0
             max_difference = int(self.Measure["number_box"])* int(self.Measure["left_box"])
             abs_difference = self.measure.absolute_distance(self.measure.count_left_box(level=1),
                                                             range_min_difference, range_max_difference, max_difference)
-
+    
             # Solution Length - Absolute distance
             range_max_length = float("inf")
             max_length = float("inf")
             range_min_length = int(self.Measure["len_opt_solution"])
             x = self.gen_length - len(child)
             sol_length = self.measure.absolute_distance(x, range_min_length, range_max_length, max_length)
-
+            
             # box_deadlock
             self.measure.box_deadlock(1)
+
 """
 
 
@@ -77,6 +78,7 @@ class AreaLengthFitness(Fitness):
         self.measure.init(self.game, child, self.name_file)
         self.game.play(level=1, list_move=child)
 
+
         # This part rewards short sequences
         ans = self.measure.gen_length(self.gen_length)
 
@@ -92,7 +94,7 @@ class AreaLengthFitness(Fitness):
         # if self.int_write == 0:
         #     self.epoch += 1
 
-        return worker_in_deadlock + count_left_box + euclidean_distance,
+        return worker_in_deadlock+count_left_box + euclidean_distance,
 
 
 # euclidean distance
@@ -143,7 +145,7 @@ class AbsDifferenceSolutionLengthFitness(Fitness):
 class DistanceAndBox(Fitness):
 
     def __init__(self, gen_length, name_file):
-        super().__init__(gen_length, name_file)
+        super().__init__(gen_length , name_file)
 
     def area_fitness(self):
         if self.game.is_completed(level=1):
