@@ -1,6 +1,8 @@
 import random
 from datetime import datetime
 
+from boto import sns
+from networkx.drawing.tests.test_pylab import plt
 from numpy.random._generator import default_rng
 
 from game import Game
@@ -151,9 +153,28 @@ toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
 toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=pset)
 
 
+def create_plot(logbook):
+    maxFitnessValues, meanFitnessValues, minFitnessValues, medianFitnessValues, stdFitnessValues = \
+        logbook.select("max", "avg", "min", "median", "std")
+    plt.plot(maxFitnessValues, color='red', label="Best Fitness")
+    plt.plot(meanFitnessValues, color='green', label="Mean Fitness")
+    plt.plot(minFitnessValues, color='orange', label="Worst Fitness")
+    plt.plot(medianFitnessValues, color='blue', label="Avg. Fitness")
+    plt.plot(stdFitnessValues, color='pink', label="Std. Fitness")
+
+    plt.xlabel('Generation')
+    plt.ylabel('Max / Average / Min / Median/ Std Fitness')
+    plt.title('Max, Average, Min, Median and Std Fitness over Generations')
+    plt.legend(loc='lower right')
+    plt.savefig("currentRun.png")
+    plt.close()
+
+
 def main():
     random.seed(42)
-    pop = toolbox.population(n=5)
+    pop = toolbox.population(n=2)
+
+    #todo config number to HallOfFame
     hof = tools.HallOfFame(1)
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", numpy.mean)
@@ -171,10 +192,11 @@ def main():
 
     time_before = datetime.now()
     # ngen = The number of generation
-    pop, logbook = algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=150, stats=stats, halloffame=hof)
+    pop, logbook = algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=5, stats=stats, halloffame=hof)
     time = time_before.minute - datetime.now().minute
 
     # numpy.pickle.dump(logbook, open(f"File/logbook_{time}_{todo config}", 'wb'))
+    create_plot(logbook)
 
     return pop, hof, stats
 
