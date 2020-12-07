@@ -75,14 +75,14 @@ class MeasureForFitness:
                     counter = counter + 1
         return int(self.Measure["left_box"]) * counter
 
-    def euclidean_distance(self, from_box, sum):
+    def euclidean_distance(self, from_box, level, sum = False):
         """
             :Return
                 The minimum distance for box from the dock * self.Measure["euclidean_distance"]
         """
         min_distances = []
         row_pos = -1
-        for row in self.game.matrix[0]:
+        for row in self.game.matrix[level-1]:
             row_pos = row_pos + 1
             col_pos = -1
             for cell in row:
@@ -90,7 +90,7 @@ class MeasureForFitness:
                 if cell == '$':
                     distances = []
                     target_row_pos = -1
-                    for row_target in self.game.matrix[0]:
+                    for row_target in self.game.matrix[level-1]:
                         target_row_pos = target_row_pos + 1
                         target_col_pos = -1
                         for cell_target in row_target:
