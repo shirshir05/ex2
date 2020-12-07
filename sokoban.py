@@ -1,7 +1,7 @@
 import random
+from copy import copy
 from datetime import datetime
 
-from boto import sns
 from networkx.drawing.tests.test_pylab import plt
 from Game import Game
 from Player import Player
@@ -31,14 +31,14 @@ class GP:
     def if_then_else(self, condition, out1, out2):
         out1() if condition() else out2()
 
-    def evalPlayer(self, individual):
+    def evalPlayer(self, set_level, individual):
         # Transform the tree expression to functionnal Python code
         routine = gp.compile(individual, self.pset)
         # Run the generated routine
         list_move = self.player.play(routine)
         fitness = 0
         self.player.set_game(Game("input.txt", 20))
-        for level in self.train_set:
+        for level in set_level:
             self.player.game.play(level + 1, list_move)
             fitness += MeasureForFitness.euclidean_distance(self.player.game, ".", level + 1)
         self.player.update_fitness(fitness)
@@ -79,71 +79,49 @@ class GP:
         self.toolbox.register("individual", tools.initIterate, creator.Individual, self.toolbox.expr_init)
         self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
 
-        # todo remove constant train and test? seed= 42
         rng = default_rng(int(self.seed_num))
         all_levels = range(0, 20)
         self.train_set = rng.choice(20, size=14, replace=False)
         self.test_set = [item for item in all_levels if item not in self.train_set]
 
-        self.toolbox.register("evaluate", self.evalPlayer)
+        self.toolbox.register("evaluate", self.evalPlayer, self.train_set)
         self.toolbox.register("select", tools.selTournament, tournsize=7)
         self.toolbox.register("mate", self.mate)
         self.toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
         self.toolbox.register("mutate", self.mutate, expr=self.toolbox.expr_mut, pset=self.pset)
+
+    @staticmethod
+    def create_plot(logbook):
+        maxFitnessValues, meanFitnessValues, minFitnessValues, medianFitnessValues, stdFitnessValues = \
+            logbook.select("max", "avg", "min", "median", "std")
+        plt.plot(maxFitnessValues, color='red', label="Worst Fitness")
+        plt.plot(meanFitnessValues, color='green', label="Mean Fitness")
+        plt.plot(minFitnessValues, color='orange', label="Best Fitness")
+        plt.plot(medianFitnessValues, color='blue', label="Avg. Fitness")
+        plt.plot(stdFitnessValues, color='pink', label="Std. Fitness")
+
+        plt.xlabel('Generation')
+        plt.ylabel('Max / Average / Min / Median/ Std Fitness')
+        plt.title('Max, Average, Min, Median and Std Fitness over Generations')
+        plt.legend(loc='lower right')
+        plt.savefig("currentRun.png")
+        plt.close()
 
     def run(self):
         random.seed(self.seed_num)
         pop = self.toolbox.population(n=self.pop_size)
         hof = tools.HallOfFame(1)
         stats = tools.Statistics(lambda ind: ind.fitness.values)
+        # stats_size = tools.Statistics(key=self.stats_key_1)
+        # mstats = tools.MultiStatistics(fitness=stats, size=stats_size)
+
         stats.register("avg", numpy.mean)
         stats.register("std", numpy.std)
         stats.register("med", numpy.median)
         stats.register("min", numpy.min)
         stats.register("max", numpy.max)
-toolbox.register("evaluate", evalPlayer)
-toolbox.register("select", tools.selTournament, tournsize=7)
-toolbox.register("mate", gp.cxOnePoint)
-toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
-toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=pset)
 
-
-def create_plot(logbook):
-    maxFitnessValues, meanFitnessValues, minFitnessValues, medianFitnessValues, stdFitnessValues = \
-        logbook.select("max", "avg", "min", "median", "std")
-    plt.plot(maxFitnessValues, color='red', label="Best Fitness")
-    plt.plot(meanFitnessValues, color='green', label="Mean Fitness")
-    plt.plot(minFitnessValues, color='orange', label="Worst Fitness")
-    plt.plot(medianFitnessValues, color='blue', label="Avg. Fitness")
-    plt.plot(stdFitnessValues, color='pink', label="Std. Fitness")
-
-    plt.xlabel('Generation')
-    plt.ylabel('Max / Average / Min / Median/ Std Fitness')
-    plt.title('Max, Average, Min, Median and Std Fitness over Generations')
-    plt.legend(loc='lower right')
-    plt.savefig("currentRun.png")
-    plt.close()
-
-
-def main():
-    random.seed(42)
-    pop = toolbox.population(n=2)
-
-    #todo config number to HallOfFame
-    hof = tools.HallOfFame(1)
-    stats = tools.Statistics(lambda ind: ind.fitness.values)
-    stats.register("avg", numpy.mean)
-    stats.register("std", numpy.std)
-    stats.register("med", numpy.median)
-    stats.register("min", numpy.min)
-    stats.register("max", numpy.max)
-
-        # 1.2 todo number level - shir - DONE!
-        # 1.3 todo add config - amit - DONE
         # 1.4 todo name file - config param + time - amit
-        # 1.4 todo fitness - shir - DONE!
-        # 1.5 todo train and test - train each level ot as a group? - DONE!
-        # 1.1 todo graph
 
         time_before = datetime.now()
         # ngen = The number of generation
@@ -154,15 +132,15 @@ def main():
                                            stats=stats,
                                            halloffame=hof)
 
+        # ngen = The number of generation
         time = time_before.minute - datetime.now().minute
-    time_before = datetime.now()
-    # ngen = The number of generation
-    pop, logbook = algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=5, stats=stats, halloffame=hof)
-    time = time_before.minute - datetime.now().minute
 
-    # numpy.pickle.dump(logbook, open(f"File/logbook_{time}_{todo config}", 'wb'))
-    create_plot(logbook)
         # numpy.pickle.dump(logbook, open(f"File/logbook_{time}_{todo config}", 'wb'))
+        GP.create_plot(logbook)
+        dic_inv = {}
+        for ind in pop:
+            dic_inv[ind] = self.evalPlayer(ind, self.test_set)
+        print(dic_inv.values())
 
         return pop, hof, stats
 
