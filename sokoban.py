@@ -183,8 +183,9 @@ class GP:
 
 if __name__ == "__main__":
 
-    gp_sokoban = GP("config.ini")
-    pop, hof, stats = gp_sokoban.run()
+    for i in range(1,4):
+        gp_sokoban = GP("config{}.ini".format(i))
+        gp_sokoban.run()
 
 
 
