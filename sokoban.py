@@ -31,14 +31,14 @@ class GP:
     def if_then_else(self, condition, out1, out2):
         out1() if condition() else out2()
 
-    def evalPlayer(self, set_level, individual):
+    def evalPlayer(self, individual):
         # Transform the tree expression to functionnal Python code
         routine = gp.compile(individual, self.pset)
         # Run the generated routine
         list_move = self.player.play(routine)
         fitness = 0
         self.player.set_game(Game("input.txt", 20))
-        for level in set_level:
+        for level in self.test_set:
             self.player.game.play(level + 1, list_move)
             fitness += MeasureForFitness.euclidean_distance(self.player.game, ".", level + 1)
         self.player.update_fitness(fitness)
@@ -84,7 +84,7 @@ class GP:
         self.train_set = rng.choice(20, size=14, replace=False)
         self.test_set = [item for item in all_levels if item not in self.train_set]
 
-        self.toolbox.register("evaluate", self.evalPlayer, self.train_set)
+        self.toolbox.register("evaluate", self.evalPlayer)
         self.toolbox.register("select", tools.selTournament, tournsize=7)
         self.toolbox.register("mate", self.mate)
         self.toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
@@ -137,10 +137,10 @@ class GP:
 
         # numpy.pickle.dump(logbook, open(f"File/logbook_{time}_{todo config}", 'wb'))
         GP.create_plot(logbook)
-        dic_inv = {}
-        for ind in pop:
-            dic_inv[ind] = self.evalPlayer(ind, self.test_set)
-        print(dic_inv.values())
+        # dic_inv = {}
+        # for ind in pop:
+        #     dic_inv[ind] = self.evalPlayer(ind, self.test_set)
+        # print(dic_inv.values())
 
         return pop, hof, stats
 
