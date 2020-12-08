@@ -34,17 +34,20 @@ class GP:
         out1() if condition() else out2()
 
     def evalPlayer(self, individual):
+        player = Player()
         # Transform the tree expression to functionnal Python code
         routine = gp.compile(individual, self.pset)
         # Run the generated routine
         list_move = self.player.play(routine)
+        player.list_move = list_move
+        print(len(player.list_move))
         fitness = 0
-        self.player.set_game(Game("input.txt", 20))
+        player.set_game(Game("input.txt", 20))
         for level in self.train_set:
-            self.player.game.play(level + 1, list_move)
-            fitness += self.Fitness.evaluate(self.player.game, level + 1)
-        self.player.update_fitness(fitness)
-        return self.player.fitness,
+            player.game.play(level + 1, list_move)
+            fitness += self.Fitness.evaluate(player.game, level + 1)
+        player.update_fitness(fitness)
+        return player.fitness,
 
     def evalPlayerTest(self, pop):
         # Transform the tree expression to functionnal Python code
@@ -85,7 +88,7 @@ class GP:
         self.pset.addTerminal(self.player.move_down)
         self.pset.addTerminal(self.player.move_up)
 
-        creator.create("FitnessMin", base.Fitness, weights=(1.0,))
+        creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
         creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
 
         self.toolbox = base.Toolbox()
@@ -183,7 +186,7 @@ class GP:
 
 if __name__ == "__main__":
 
-    for i in range(1,4):
+    for i in range(1, 4):
         gp_sokoban = GP("config{}.ini".format(i))
         gp_sokoban.run()
 

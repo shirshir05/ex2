@@ -12,6 +12,7 @@ class Player:
         self.game = game
 
     def play(self, routine):
+        self.list_move = []
         # todo change range
         for i in range(0, 1000):
             routine()
