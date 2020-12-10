@@ -17,6 +17,7 @@ from deap import tools
 from deap import gp
 from ParseConfig import ParseConfig
 from Fitness.fitness import Fitness
+from concurrent.futures import ThreadPoolExecutor
 
 
 class GP:
@@ -40,7 +41,6 @@ class GP:
         # Run the generated routine
         list_move = self.player.play(routine)
         player.list_move = list_move
-        print(len(player.list_move))
         fitness = 0
         player.set_game(Game("input.txt", 20))
         for level in self.train_set:
@@ -53,16 +53,18 @@ class GP:
         # Transform the tree expression to functionnal Python code
         list_fitness = []
         for individual in pop:
+            player = Player()
             routine = gp.compile(individual, self.pset)
             # Run the generated routine
             list_move = self.player.play(routine)
+            player.list_move = list_move
             fitness = 0
-            self.player.set_game(Game("input.txt", 20))
+            player.set_game(Game("input.txt", 20))
             for level in self.test_set:
-                self.player.game.play(level + 1, list_move)
-                fitness += self.Fitness.evaluate(self.player.game, level + 1)
-            self.player.update_fitness(fitness)
-            list_fitness.append((individual, self.player.fitness, list_move))
+                player.game.play(level + 1, list_move)
+                fitness += self.Fitness.evaluate(player.game, level + 1)
+            player.update_fitness(fitness)
+            list_fitness.append((individual, player.fitness, list_move))
         return list_fitness
 
     def __init__(self, name_file_config):
@@ -91,7 +93,12 @@ class GP:
         creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
         creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
 
+
+
         self.toolbox = base.Toolbox()
+
+        executor = ThreadPoolExecutor()
+        self.toolbox.register("map", executor.map)
 
         # Attribute generator
         self.toolbox.register("expr_init", gp.genFull, pset=self.pset, min_=1, max_=2)
@@ -132,7 +139,7 @@ class GP:
     def run(self):
         random.seed(self.seed_num)
         pop = self.toolbox.population(n=self.pop_size)
-        hof = tools.HallOfFame(2)
+        hof = tools.HallOfFame(1)
         stats = tools.Statistics(lambda ind: ind.fitness.values)
         # stats_size = tools.Statistics(key=self.stats_key_1)
         # mstats = tools.MultiStatistics(fitness=stats, size=stats_size)
@@ -157,7 +164,8 @@ class GP:
         # ngen = The number of generation
         time = -(time_before.minute - datetime.now().minute)
         dir_name = f"File/{self.pop_size}_{self.seed_num}_{self.ngen}_{self.crossover_prob}_{self.mutation_prob}_" \
-                   f"{self.config.get_mutation_name()}_{self.config.get_crossover_name()}_{time}"
+                   f"{self.config.get_mutation_name()}_{self.config.get_crossover_name()}_{time}_" \
+                   f"{str(datetime.now().hour)}_{str(datetime.now().minute)}_position_worker_left_boxes"
         PROJECT_ROOT = Path.cwd()
         output_dir = PROJECT_ROOT / dir_name
         output_dir.mkdir(exist_ok=True)
@@ -189,6 +197,9 @@ if __name__ == "__main__":
     for i in range(1, 4):
         gp_sokoban = GP("config{}.ini".format(i))
         gp_sokoban.run()
+
+    # gp_sokoban = GP("config{}.ini".format(4))
+
 
 
 
