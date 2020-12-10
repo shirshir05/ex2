@@ -1,9 +1,11 @@
 import pathlib
 from queue import Queue
+from BFS import BFS
 
 
 
 # number col for all level
+
 dic_level_col = {1: 19, 2: 14, 3: 17, 4: 19, 5: 17, 6: 12, 7: 13, 8: 16, 9: 17, 10: 19,
        11: 19, 12: 17, 13: 19, 14: 18, 15: 17, 16: 14, 17: 16, 18: 19, 19: 19, 20: 19}
 
@@ -13,11 +15,11 @@ class Game:
     @staticmethod
     def is_valid_value(char):
         if (char == ' ' or  # floor
-                char == '#' or  # wall
+                char == '#' or  # wall - V
                 char == '@' or  # worker on floor
-                char == '.' or  # dock
-                char == '*' or  # box on dock
-                char == '$' or  # box
+                char == '.' or  # dock   V
+                char == '*' or  # box on dock   V
+                char == '$' or  # box   V
                 char == '+'):  # worker on dock
             return True
         else:
@@ -245,5 +247,8 @@ class Game:
 if __name__ == '__main__':
     # game = Game("one_input.txt", 1)
     game = Game("input.txt", 20)
+    for i in range(1, 21):
+        print(BFS.bfs(game.matrix, i, (game.worker(i)[1], game.worker(i)[0])))
+
     # game.print_board()
     # print(game.play(1, Game.string_split()))
