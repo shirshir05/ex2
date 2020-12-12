@@ -217,7 +217,6 @@ class Game:
 
     def play(self, level, list_move):
         # print("start")
-        index = 0
         for move in list_move:
             if self.is_completed(level):
                 return True
@@ -229,9 +228,32 @@ class Game:
                 self.move(level, -1, 0, True)
             elif move == 'D' or move == 'd':
                 self.move(level, 1, 0, True)
-            index += 1
         # self.print_board()
         return self.is_completed(level)  # True/ False
+
+    def play_up(self, level):
+        if self.is_completed(level):
+            return True
+        self.move(level, -1, 0, True)
+        game.print_board()
+
+    def play_left(self, level):
+        if self.is_completed(level):
+            return True
+        self.move(level, 0, -1, True)
+        game.print_board()
+
+    def play_right(self, level):
+        if self.is_completed(level):
+            return True
+        self.move(level, 0, 1, True)
+        game.print_board()
+
+    def play_down(self, level):
+        if self.is_completed(level):
+            return True
+        self.move(level, 1, 0, True)
+        game.print_board()
 
     @staticmethod
     def string_split():

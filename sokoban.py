@@ -93,8 +93,6 @@ class GP:
         creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
         creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
 
-
-
         self.toolbox = base.Toolbox()
 
         executor = ThreadPoolExecutor()
@@ -165,7 +163,7 @@ class GP:
         time = -(time_before.minute - datetime.now().minute)
         dir_name = f"File/{self.pop_size}_{self.seed_num}_{self.ngen}_{self.crossover_prob}_{self.mutation_prob}_" \
                    f"{self.config.get_mutation_name()}_{self.config.get_crossover_name()}_{time}_" \
-                   f"{str(datetime.now().hour)}_{str(datetime.now().minute)}_position_worker_left_boxes"
+                   f"{str(datetime.now().hour)}_{str(datetime.now())}_position_worker_left_boxes"
         PROJECT_ROOT = Path.cwd()
         output_dir = PROJECT_ROOT / dir_name
         output_dir.mkdir(exist_ok=True)
@@ -175,7 +173,7 @@ class GP:
 
         list_test = self.evalPlayerTest(pop)
         with open(f"{dir_name}/test.csv", 'w') as out:
-            csv_out = csv.writer(out)
+            csv_out = csv.writer(out,  delimiter=';')
             csv_out.writerow(['individual', 'fitness', 'list move'])
             for row in list_test:
                 csv_out.writerow([row[0], row[1], row[2]])
@@ -194,11 +192,12 @@ class GP:
 
 if __name__ == "__main__":
 
-    for i in range(1, 4):
-        gp_sokoban = GP("config{}.ini".format(i))
-        gp_sokoban.run()
+    # for i in range(1, 4):
+    #     gp_sokoban = GP("config{}.ini".format(i))
+    #     gp_sokoban.run()
 
-    # gp_sokoban = GP("config{}.ini".format(4))
+    gp_sokoban = GP("config{}.ini".format(4))
+    gp_sokoban.run()
 
 
 
