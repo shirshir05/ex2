@@ -48,7 +48,7 @@ class GP:
         player.set_game(Game("input.txt", 20))
         for level in self.train_set:
             player.game.play(level + 1, list_move)
-            fitness += self.Fitness.evaluate(player.game, level + 1)
+            fitness += self.Fitness.evaluate(player.game, level + 1, list_move)
         player.update_fitness(fitness)
         return player.fitness,
 
@@ -65,7 +65,7 @@ class GP:
             player.set_game(Game("input.txt", 20))
             for level in self.test_set:
                 player.game.play(level + 1, list_move)
-                fitness += self.Fitness.evaluate(player.game, level + 1)
+                fitness += self.Fitness.evaluate(player.game, level + 1, list_move)
             player.update_fitness(fitness)
             list_fitness.append((individual, player.fitness, list_move))
         return list_fitness
@@ -141,7 +141,7 @@ class GP:
     def run(self):
         random.seed(self.seed_num)
         pop = self.toolbox.population(n=self.pop_size)
-        # hof = tools.HallOfFame(1)
+        hof = tools.HallOfFame(1)
         stats = tools.Statistics(lambda ind: ind.fitness.values)
         # stats_size = tools.Statistics(key=self.stats_key_1)
         # mstats = tools.MultiStatistics(fitness=stats, size=stats_size)
@@ -160,8 +160,8 @@ class GP:
                                            cxpb=self.crossover_prob,
                                            mutpb=self.mutation_prob,
                                            ngen=self.ngen,
-                                           stats=stats)
-                                           # halloffame=hof)
+                                           stats=stats,
+                                           halloffame=hof)
 
         # ngen = The number of generation
         time = -(time_before.minute - datetime.now().minute)
@@ -177,7 +177,7 @@ class GP:
 
         list_test = self.evalPlayerTest(pop)
         with open(f"{dir_name}/test.csv", 'w') as out:
-            csv_out = csv.writer(out,  delimiter=';')
+            csv_out = csv.writer(out, delimiter=';')
             csv_out.writerow(['individual', 'fitness', 'list move'])
             for row in list_test:
                 csv_out.writerow([row[0], row[1], row[2]])
@@ -191,8 +191,7 @@ class GP:
         # print("Hall of Fame Individuals = ", *hof.items, sep="\n")
         # print("Best Ever Individual = ", hof.items[0])
 
-        return pop, stats
-        # return pop, hof, stats
+        return pop, hof, stats
 
 
 if __name__ == "__main__":
@@ -203,7 +202,3 @@ if __name__ == "__main__":
 
     # gp_sokoban = GP("config{}.ini".format(1))
     # gp_sokoban.run()
-
-
-
-
