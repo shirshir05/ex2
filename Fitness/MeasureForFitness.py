@@ -154,7 +154,7 @@ class MeasureForFitness:
     def pattern(self, seq):
         storage = {}
         counter = 0
-        for length in range(45, 100):
+        for length in range(40, 100):
             valid_strings = {}
             for start in range(0, len(seq) - length + 1):
                 valid_strings[start] = tuple(seq[start:start + length])
