@@ -27,6 +27,7 @@ class Game:
 
     def __init__(self, name_file, number_level):
         self.queue = Queue()
+        self.number_level = number_level
         self.matrix = [[] for i in range(0, number_level)]
         file = open(str(pathlib.Path().absolute()) + '/File/' + name_file, 'r')
         level = 0
@@ -210,28 +211,51 @@ class Game:
                 self.set_content(level, current[0], current[1], '.')
                 self.set_content(level, current[0] + x, current[1] + y, '+')
                 if save: self.queue.put((x, y, True))
+            return 1
         else:
             # can't move
-            return False
-        return True
+            return 0
+        return 0
 
     def play(self, level, list_move):
         # print("start")
-        index = 0
+        number_push = 0
         for move in list_move:
             if self.is_completed(level):
                 return True
             if move == 'L' or move == 'l':
-                self.move(level, 0, -1, True)
+                number_push += self.move(level, 0, -1, True)
             elif move == 'R' or move == 'r':
-                self.move(level, 0, 1, True)
+                number_push += self.move(level, 0, 1, True)
             elif move == 'U' or move == 'u':
-                self.move(level, -1, 0, True)
+                number_push += self.move(level, -1, 0, True)
             elif move == 'D' or move == 'd':
-                self.move(level, 1, 0, True)
-            index += 1
+                number_push += self.move(level, 1, 0, True)
         # self.print_board()
-        return self.is_completed(level)  # True/ False
+        return number_push
+
+    def play_up(self):
+        if self.is_completed(self.number_level):
+            return True
+        self.move(self.number_level, -1, 0, True)
+
+    def play_left(self):
+        if self.is_completed(self.number_level):
+            return True
+        self.move(self.number_level, 0, -1, True)
+        game.print_board()
+
+    def play_right(self):
+        if self.is_completed(self.number_level):
+            return True
+        self.move(self.number_level, 0, 1, True)
+        game.print_board()
+
+    def play_down(self,):
+        if self.is_completed(self.number_level):
+            return True
+        self.move(self.number_level, 1, 0, True)
+        game.print_board()
 
     @staticmethod
     def string_split():

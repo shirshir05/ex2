@@ -31,6 +31,9 @@ class GP:
     def prog3(self, out1, out2, out3):
         return partial(self.progn, out1, out2, out3)
 
+    def prog4(self, out1, out2, out3, out4):
+        return partial(self.progn, out1, out2, out3, out4)
+
     def if_then_else(self, condition, out1, out2):
         out1() if condition() else out2()
 
@@ -55,16 +58,14 @@ class GP:
         for individual in pop:
             player = Player()
             routine = gp.compile(individual, self.pset)
-            # Run the generated routine
-            list_move = self.player.play(routine)
-            player.list_move = list_move
             fitness = 0
-            player.set_game(Game("input.txt", 20))
+            # player.set_game(Game("input.txt", 20))
             for level in self.test_set:
-                player.game.play(level + 1, list_move)
+                # player.game.play(level + 1, list_move)
+                list_move = self.player.play(routine)
                 fitness += self.Fitness.evaluate(player.game, level + 1)
             player.update_fitness(fitness)
-            list_fitness.append((individual, player.fitness, list_move))
+            list_fitness.append((individual, player.fitness))
         return list_fitness
 
     def __init__(self, name_file_config):
@@ -85,6 +86,7 @@ class GP:
         # pset.addPrimitive(ant.if_food_ahead, 2)
         self.pset.addPrimitive(self.prog2, 2)
         self.pset.addPrimitive(self.prog3, 3)
+        self.pset.addPrimitive(self.prog4, 4)
         self.pset.addTerminal(self.player.move_left)
         self.pset.addTerminal(self.player.move_right)
         self.pset.addTerminal(self.player.move_down)
@@ -92,8 +94,6 @@ class GP:
 
         creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
         creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
-
-
 
         self.toolbox = base.Toolbox()
 
@@ -173,12 +173,12 @@ class GP:
         pickle.dump(logbook, open(f"{dir_name}/logbook.pkl", 'wb'))
         GP.create_plot(logbook, f"{dir_name}/plot.png")
 
-        list_test = self.evalPlayerTest(pop)
-        with open(f"{dir_name}/test.csv", 'w') as out:
-            csv_out = csv.writer(out)
-            csv_out.writerow(['individual', 'fitness', 'list move'])
-            for row in list_test:
-                csv_out.writerow([row[0], row[1], row[2]])
+        # list_test = self.evalPlayerTest(pop)
+        # with open(f"{dir_name}/test.csv", 'w') as out:
+        #     csv_out = csv.writer(out)
+        #     csv_out.writerow(['individual', 'fitness', 'list move'])
+        #     for row in list_test:
+        #         csv_out.writerow([row[0], row[1], row[2]])
 
         # file1 = open("individual.txt", "a")
         # file1.write("Best Ever Individual = " + str(hof.items[0]) + "\n")
@@ -194,11 +194,12 @@ class GP:
 
 if __name__ == "__main__":
 
-    for i in range(1, 4):
-        gp_sokoban = GP("config{}.ini".format(i))
-        gp_sokoban.run()
+    # for i in range(1, 4):
+    #     gp_sokoban = GP("config{}.ini".format(i))
+    #     gp_sokoban.run()
 
-    # gp_sokoban = GP("config{}.ini".format(4))
+    gp_sokoban = GP("config{}.ini".format(2))
+    gp_sokoban.run()
 
 
 

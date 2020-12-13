@@ -33,7 +33,7 @@ class MeasureForFitness:
             index_row += 1
         return list_box, list_free, list_dock, worker
 
-    def count_left_box(self, game,  level):
+    def count_left_box(self, game,  level, cell_param='$'):
         """
            :Return
                (The number of boxes out of place) * left_box
@@ -41,7 +41,7 @@ class MeasureForFitness:
         counter = 0
         for row in game.matrix[level - 1]:
             for cell in row:
-                if cell == '$':
+                if cell == cell_param:
                     counter = counter + 1
         return int(self.config.left_box) * counter
 
