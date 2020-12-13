@@ -243,12 +243,51 @@ class Game:
             list_move.append(i)
         return list_move
 
+    def position_box(self, level):
+        list_box = []
+        index_row = 0
+        for row in self.matrix[level - 1]:
+            index_col = 0
+            for col in row:
+                if col == "$":
+                    list_box.append((index_row, index_col))
+                index_col += 1
+            index_row += 1
+        return list_box
+
+    def position(self, level):
+        """
+           return position of boxes,free cell, dock and worker
+       """
+        list_box = []
+        list_free = []
+        list_dock = []
+        worker = None
+        index_row = 0
+        for row in self.matrix[level - 1]:
+            index_col = 0
+            for col in row:
+                if col == "$":
+                    list_box.append((index_row, index_col))
+                elif col == " ":
+                    list_free.append((index_row, index_col))
+                elif col == "*" or col == "." or "+":
+                    list_dock.append((index_row, index_col))
+                elif col == "@" or col == "+":
+                    worker = (index_row, index_col)
+                index_col += 1
+            index_row += 1
+        return list_box, list_free, list_dock, worker
+
 
 if __name__ == '__main__':
     # game = Game("one_input.txt", 1)
     game = Game("input.txt", 20)
     for i in range(1, 21):
-        print(BFS.bfs(game.matrix, i, (game.worker(i)[1], game.worker(i)[0])))
+        print(game.position(i))
+    # game.print_board()
+    # for i in range(1, 21):
+    #     print(BFS.bfs(game.matrix, i, (game.worker(i)[1], game.worker(i)[0])))
 
     # game.print_board()
     # print(game.play(1, Game.string_split()))

@@ -31,6 +31,9 @@ class GP:
     def prog3(self, out1, out2, out3):
         return partial(self.progn, out1, out2, out3)
 
+    def prog4(self, out1, out2, out3, out4):
+        return partial(self.progn, out1, out2, out3, out4)
+
     def if_then_else(self, condition, out1, out2):
         out1() if condition() else out2()
 
@@ -85,6 +88,7 @@ class GP:
         # pset.addPrimitive(ant.if_food_ahead, 2)
         self.pset.addPrimitive(self.prog2, 2)
         self.pset.addPrimitive(self.prog3, 3)
+        self.pset.addPrimitive(self.prog4, 4)
         self.pset.addTerminal(self.player.move_left)
         self.pset.addTerminal(self.player.move_right)
         self.pset.addTerminal(self.player.move_down)
@@ -92,8 +96,6 @@ class GP:
 
         creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
         creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
-
-
 
         self.toolbox = base.Toolbox()
 
@@ -175,7 +177,7 @@ class GP:
 
         list_test = self.evalPlayerTest(pop)
         with open(f"{dir_name}/test.csv", 'w') as out:
-            csv_out = csv.writer(out)
+            csv_out = csv.writer(out,  delimiter=';')
             csv_out.writerow(['individual', 'fitness', 'list move'])
             for row in list_test:
                 csv_out.writerow([row[0], row[1], row[2]])
