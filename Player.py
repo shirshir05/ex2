@@ -14,7 +14,7 @@ class Player:
     def play(self, routine):
         self.list_move = []
         # todo change range
-        for i in range(0, 1000):
+        for i in range(0, 100):
             routine()
         return self.list_move
 

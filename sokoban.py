@@ -141,7 +141,7 @@ class GP:
     def run(self):
         random.seed(self.seed_num)
         pop = self.toolbox.population(n=self.pop_size)
-        hof = tools.HallOfFame(1)
+        # hof = tools.HallOfFame(1)
         stats = tools.Statistics(lambda ind: ind.fitness.values)
         # stats_size = tools.Statistics(key=self.stats_key_1)
         # mstats = tools.MultiStatistics(fitness=stats, size=stats_size)
@@ -160,14 +160,14 @@ class GP:
                                            cxpb=self.crossover_prob,
                                            mutpb=self.mutation_prob,
                                            ngen=self.ngen,
-                                           stats=stats,
-                                           halloffame=hof)
+                                           stats=stats)
+                                           # halloffame=hof)
 
         # ngen = The number of generation
         time = -(time_before.minute - datetime.now().minute)
         dir_name = f"File/{self.pop_size}_{self.seed_num}_{self.ngen}_{self.crossover_prob}_{self.mutation_prob}_" \
                    f"{self.config.get_mutation_name()}_{self.config.get_crossover_name()}_{time}_" \
-                   f"{str(datetime.now().hour)}_{str(datetime.now().minute)}_position_worker_left_boxes"
+                   f"{str(datetime.now().hour)}_{str(datetime.today().strftime('%d-%m-%Y'))}_{str(datetime.now().minute)}"
         PROJECT_ROOT = Path.cwd()
         output_dir = PROJECT_ROOT / dir_name
         output_dir.mkdir(exist_ok=True)
@@ -191,7 +191,8 @@ class GP:
         # print("Hall of Fame Individuals = ", *hof.items, sep="\n")
         # print("Best Ever Individual = ", hof.items[0])
 
-        return pop, hof, stats
+        return pop, stats
+        # return pop, hof, stats
 
 
 if __name__ == "__main__":
@@ -200,7 +201,8 @@ if __name__ == "__main__":
         gp_sokoban = GP("config{}.ini".format(i))
         gp_sokoban.run()
 
-    # gp_sokoban = GP("config{}.ini".format(4))
+    # gp_sokoban = GP("config{}.ini".format(1))
+    # gp_sokoban.run()
 
 
 
