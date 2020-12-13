@@ -151,3 +151,54 @@ class MeasureForFitness:
         list_move = set(list_init_box) - set(list_current_box)
         return len(list_move)
 
+    def pattern(self, seq):
+        storage = {}
+        counter = 0
+        for length in range(45, 100):
+            valid_strings = {}
+            for start in range(0, len(seq) - length + 1):
+                valid_strings[start] = tuple(seq[start:start + length])
+            candidates = set(valid_strings.values())
+            if len(candidates) != len(valid_strings):
+                counter += 1
+                # print("Pattern found for " + str(length))
+                storage = valid_strings
+            else:
+                # print("No pattern found for " + str(length))
+                break
+        # set(v for v in storage.values() if list(storage.values()).count(v) > 1)
+        return counter
+
+
+if __name__ == "__main__":
+    seq1 = "ullluuuLUllDlldddrRRRRRRRRRRRRurDllllllllllllllulldRRRRRRRRRRRRRdrUluRRlldlllllluuululldDDuulldddrRRRRRRRRRRRRlllllllluuulLulDDDuulldddrRRRRRRRRRRRurDlllllllluuululuurDDllddddrrruuuLLulDDDuulldddrRRRRRRRRRRdrUluRldlllllluuuluuullDDDDDuulldddrRRRRRRRRRRR"
+    seq2 = "rdrRdddrruuLUUruulLulllldDuurrrrdrrddldlllulLLLLLd lUUUrrrddrruuurrdLulDDuurrrrdrrddldlllulLLLLLdlUUr rrdrruuurrrrdLLLulDDurrrrrrddldlllulLLLLLdlUrrrrrr rdrrruUruLLLLLulDDurrrrrdddlllulLLLLLrrrrdddldlluR RdrUUUUrrdrrruuulllllDurrrrrdddlllulLLLulDrdLLurrr rrrdrrrdrddlllluLLdlluRdrUUUddrrdrrrruululllulLLLL dlUUUrrddrrdddrrdrruUddllulluuurrdrRdrUUUruLLLLLul DDurrrrrdddlllulLLLLdlUUrrdrrrrdrrddLLLLdlluRdrUUU ddrrrruullulLLLLulDrrrrrrdrrrdrdLLLLLLdlluRdrUUUdd rrrruullulLLLdlUruLrdrrrrdrDrdLLLLdlluRdrUUUddrrru ululLLLL"
+    seq3 = "ldDllddddlLLLLdlUruLLLLrrrrdrrrrrurRdLLLLLLLulDrdL LLLurrrrrrrrrrrrruLLdlluuuurrDDDrdLLLLLLLLLLLdlUrr rrrrrrrrruuuLulDDDuurrdddlLLLLLLulDrdLLLurrrrrrrru uuurruullllddRRRllluurrrrdDDDDrdLLLLLLLLLLLrrrrrru uRlddrrrruuullDDuurrdddlLLLLLLLLdlUrrrrrruurDrdLLL LLulDrdLLurrrrruurruulDDDrdLLLLLLLrrrrruuruuluurDD DDDrdLLLLLLdlUrrrrrrrrruLLulDrdLLLLLulDrdLurrrruur uuuurrDDrdLulDDDrdLLLLLLL"
+    seq4 = "lullLLLulldRRRRllulluuluurRRRRRurRuRRRRRRRdrUUllllldllldlluRRRRRRRRRdrUllllllllllddddrruUUluRRRRurDldRRRRulllllllddrUluRRRurDDldRRRRuulllllllddddrUUUluRRRRRRRlllllllllddRRdrUUluRRRRRRdrUUlllldlllddddlUUUluRRRRRRRRurDDulllllllllddlllllluurrrDulllddrrRRRRdrUUluRRRRRRRRdrUlllllllllddllluulDullddrRRRRRdrUUluRRRRRurDldRRRullllllllddddlUruLLLuulllddrRRRRRdrUUluRRRRRRRRlllllllllDrdLLLuulllddrRRRRdrUUluRRRRRRRRurDDulllllllllddlllllddrUluRRRRRdrUUluRRRRRRRRdrUUllldllllllddlldLullddrUluRRRRRdrUUluRRRRRRRRurDlllllllllddllddLulDDDlddrUUUUUluRRRRRdrUUluRRRRRRdrUluRRlldllllllddllllddddrrdrrurrdLLLLLullddrUUUUUluRRRRRdrUUluRRRRRRRRllllllllddllllddddrrdrrrrddllUdrruulLLLLullddrUUUUUluRRRRRdrUUluRRRRRRRurDDullllllllddllllddddrrdrrddrUruLLLLLullddrUUUUUluRRRRRdrUUluRRRRRRRdrUUlldllllllddlllldddddddrrUdlluurRRRurrdLLLLLullddrUUUUUluRRRRRdrUUluRRRRRRRurDllllllllddllllddddrrddLdlUUUUUUluRRRRRdrUUluRRRRRRdrUluRldllllllddlluullDldRRRRRdrUUluRRRRRRR"
+    seq5 = "luUllDlLLLLLLLLdlUrrrrrrrrrrurrdLLLLLLLulDrdLLLLur rrrrrrrddlUruLLLLLLLLrrrrrrrrrrrddlUruLLLLLLLLLLrrrrrrrrrdLLdlUruLLLLulDrdLLLurrrrrrrrrrdddrddllluuUUruLLLLLLdlUruLLLrrrdrrruuurrrrDDllLrrruulllldDrdLLLLLLdlUrrrrrruuuuurrDullddddrrrruulLLruulldDDDrdLLLLulDrdLLurrrrrurrrrurruLLLLLruulldDDDrdLLLLLLrrrrrrrrdrUUUruLLLLruulldDDDrdLLLLLulDrrrrrdddRurrrdrddllluUUUruLLLLLLdlUruLrdrrrrrrrdddLrrddllluUUUruLLLLLLL"
+    seq6 = "drddddlDuruuLDuruulDLLLLLLLulDDurrrrrrrrrddllUdrru ulLLLLLLulDDurrrrrrddrUruLLLLLLLLulDrrrrrrrrrddddl UUUruLLLLLLdlUUruLLrrddrrrrrddddlUUUruLLLLLdlUruLL rrdrrrrrrddddddllUUUUUruLLLLLLLrrrrrrdddddllUUUUdd ddrruuuuulLLLLulDrrrrddddlluRdrUUUddddrruuuuulLLLd lUUruLrddrrdddlldddrUUluRdrUUUddddrruuuuulLLLdlUru LrdrrrrddddddrUUUUUruLLLLLLL"
+    seq7 = "ldRRRRRdDDDDldRuuuuuullllllldRurrrrruurDDDDDDDuuuu rruLdlUluurDDDDDDrdLulDuuruuulllllldddddlluRdrUUUU luRRRRRRurDDDDDldRuuuuullllllddddlldddrUUluRdrUUUU luRRRRRRurDDDDldRuuuulllllldddddrdLullddrUUluRdrUU UUluRRRRRRurDDDDlddrUluRuuulllllldddrDrRRRurDlllll lddrUluRRRRllluluuurrrrrrdddlDuruuulllldLulDDDrddl luRRRRRRuruuurruLulDDDDuullllllddddlluRdrUUUluRdrr uulDrdLulDDDldRRRRR"
+    seq8 = "drrrRdrrrUUddlllulldRurDDDDDDrdLLuuuuruurrruuruulu urrdrdrrrddlldlldLLLLLulldRurDDDDDDrdLuuuuuurrruur uulDDDuuuuurrdrdrrrddlldlldlLLLLulldRurDDDDDDuuuuu rrrrrurrdLLLLLLLulldRurDDDDDldRurDuuuuurrrrurrurrd dLLLLLLLLLulldRurDDDDDldRRurDuuuluurruuuuuuLLLLrrd dLLDDDldRurDDDDDldRRRurDuuulluurruuuuuullllDDDDDld RurDDDDDrdLLuuuruuuluuurrddLruulldDDldRurDDDDrdLLu uruuuurDDDDDDrdLLuuuuurrruuLruuuulldddDDDDDDDrdLuu uuuuullulDDldRRurDDDDrdLuuuuuuluuulDDDDldRRRurDDDD DuuuuuurruuLruulldDDDDDDDDldRRurDuulluuuuuuuurrrrd rRllulldLulDDDDDDDDDldRurDuuluuuuuuuullulDDDDDDldR RRurDDDDldRRuuluuuuuuuurrrrdrruLLLLLLLrddlluluurDD DDDDldRRurDDDDldRuuuurrrrurrurruuuuLLLLLLLLLrddllu luurDDDDDDldRurDDDDuuurrrrrurrurruulUruLLLLLLLLLrd dlluluurDDDDDDldRRurDDDD"
+    seq9 = "rurrdrRRlddrrruuurrDllddllluuruRRllulDDurrruLUUUUl uRRRRRRRdrUUlllldllldddddrddrruuLLdlUUUUUluRRRRRRR drUlllllllddddddlluRdrUUUUUluRRRRRRRlllllldddddrru LdlUUUUluRRRRurDldRRRulllllldddddlluRdrUUUUluRRRRu rDDldRRRuullllllddddrdddrUruLLdlUUUUUluRRRRRRdrUUl lldlllddddrdddddllUUUUluRdrUUUUluRRRRRRdrUlllllldd ddrddddLdlUUUUluRdrUUUUluRRRRurDDldRRuulllllddddld dddrUUUUUUUluRRRRurDldRRulllllddddrrdrddrrurrdLLLL LLdlUUUUUUUluRRRRRdrUUlldlllddddrdddddrUUUruLLdlUU UUUluRRRRRurDDulllllddddrrdddddrUluRRRurrdLLLLLLdl UUUUUUUluRRRRRdrUlllllddddlldddllulldRRRRRdrUUUUUU UluRRRRurDldRullllddddldddddlUruLLLulldRRRRRdrUUUU UUUluRRRRR"
+    seq10 = "DRDDDDrdLulDDDDldRuuuurrdrddddddrrrrrrrrrruuuulllu urDldlluuRuuurruuluRRRRurDDDDDDDDDDDDuuuuuuuuuuull llullldRRRRRRurDDDDDDDDDDDuuuuuuuuuullllllldRRlldd rrruUluRRRRurDDDDDDDDDDuuuuuuuuulllldddlUUluRRRRRu rDDDDDDDDDuuuuuuuullllldddlUUluRRRRRRurDDDDDDDDuuu uuuulllllllldllddrUluRRRdrUluRRRRRurDDDDDDDuuuuuul lllllldldRRdrUUluRRRRRRurDDDDDDDuuuuuulllllldddddd lddrUUUUUUUluRRRRRurDDDDDDrdLuuuuuullllldddddddrru LdlUUUUUUluRRRRRRurDDDDDDuuuuullllddddLulDDDlddrUU UUUUUluRRRRRurDDDDDDuuuuulllullllllDRRRRRRRRurDDDD DrdLuuuuulllllllllllDDlluuRRRRRRRRRRRRurDDDDDuuuul lllllllddlUruLLLddlluuRRRRRRRRRRRRRurDDDDDuuuullll llddddddddddrUUUruLdlUUUUUUluRRRRRurDDDDrdLuuuulll llllllllddlddddrddddddrrrrrrrrrruuuulLLdlUUUUUUUUl uRRRRRurDDDDuuulllllddddddrddddrUluuuluuuuuullllll ddlddddrddddddrrrrrrrrrruuuulLLdlUUUUUUUUluRRRRRRu rDDDDuuullllllddddddrrddrrdLLLdlUUUUUUUUUluRRRRRur DDDrdLuuulllllddddddddddlllluurRRurrddlUUUUUUUUluR RRRRurDDDuulllllddddddlddllluurRRdrUUUUUUluRRRRRRu rDDDuullllllllldddRRRdrUUUluRRRRRurDDulllllllldddd RuuuulllllddlddddrddddddrrrrrrrrrruuuulluulluUUUUl uRRRRRurDDulllllllllddddRRRuuuulllllddlddddrdddddd rrrrrrrrrruuuulluulluUUUUluRRRRRurDrdLulDulllldddd ddddddlUUUdllluurrRdrUUUUUUluRRRRRRurDlllllldddddd lddddlUdlluurRRdrUUUUUUUUluRRRRRurDlllllddddddllll dddRRRdrUUUUUUUUUluRRRRRurrdLulDllllddddddlddlUdll uurRRdrUUUUUUluRRRRRRlllllddddddlllldRRRdrUUUUUUUl uRRRRRllllllllllddlddrUUUdlluurRRRRRRRRRRlllllllll dLulDDDDrdLulDDDldRuuuuruuuullddRluurrdDDDrdLulDDD DuuuuruulluRurDDDDrdLulDDD"
+    seqn = "llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+    # 1 -> 25
+    # 2 -> 26
+    # 3 -> 17
+    # 4 -> 41
+    # 5-> 25
+    # 6 ->25
+    # 7 -> 25
+    # 8 ->23
+    # 9 ->21
+    # 10 ->43
+    # in avg, every
+    # print(pattern(seq1))
+    # print(pattern(seq2))
+    # print(pattern(seq3))
+    # print(pattern(seq4))
+    # print(pattern(seq5))
+    # print(pattern(seq6))
+    # print(pattern(seq7))
+    # print(pattern(seq8))
+    # print(pattern(seq9))
