@@ -46,31 +46,40 @@ class Player:
         return partial(self.if_then_else, self.sense_box, out1, out2)
 
     def sense_box(self):
-        pass
-    #
-    # def move_right(self):
-    #     self.list_move.append("r")
-    #
-    # def move_left(self):
-    #     self.list_move.append("l")
+        if self.game.can_push(self.game.level, 0, -1) or (self.game.can_push(self.game.level, 0, 1)) or (
+        self.game.can_push(self.game.level, -1, 0)) or (self.game.can_push(self.game.level, 1, 0)):
+            return True
+        else: return False
+
+
+#
+# def move_right(self):
+#     self.list_move.append("r")
+#
+# def move_left(self):
+#     self.list_move.append("l")
 
     def update_fitness(self, fitness):
         self.fitness = fitness
+
 
     def move_up(self):
         for level in self.set_levels:
             self.game.play(level + 1, ['u'])
         self.list_move.append("u")
 
+
     def move_down(self):
         for level in self.set_levels:
             self.game.play(level + 1, ['d'])
         self.list_move.append("d")
 
+
     def move_right(self):
         for level in self.set_levels:
             self.game.play(level + 1, ['r'])
         self.list_move.append("r")
+
 
     def move_left(self):
         for level in self.set_levels:
