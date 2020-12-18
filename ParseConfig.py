@@ -1,10 +1,10 @@
 from configparser import ConfigParser
 
 from Fitness.fitness import *
-from deap import gp
+from deap import gp, tools
+
 
 class ParseConfig:
-
 
     def __init__(self, file_name):
         # <editor-fold desc="Dictionaries">

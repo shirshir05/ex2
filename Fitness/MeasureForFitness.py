@@ -149,7 +149,7 @@ class MeasureForFitness:
         list_init_box = dic_position_box[level]
         list_current_box = game.position_box(level)
         list_move = set(list_init_box) - set(list_current_box)
-        return len(list_move)
+        return len(list_move)/len(list_init_box)
 
     def pattern(self, seq):
         storage = {}

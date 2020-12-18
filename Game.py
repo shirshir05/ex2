@@ -27,6 +27,7 @@ class Game:
 
     def __init__(self, name_file, number_level):
         self.queue = Queue()
+        self.level = number_level
         self.matrix = [[] for i in range(0, number_level)]
         file = open(str(pathlib.Path().absolute()) + '/File/' + name_file, 'r')
         level = 0
@@ -59,6 +60,7 @@ class Game:
             else:
                 level += 1
                 level_found = True
+
 
     def print_board(self):
         for i in range(0, len(self.matrix)):
@@ -254,6 +256,18 @@ class Game:
                 index_col += 1
             index_row += 1
         return list_box
+
+    def position_player(self, level):
+        worker = None
+        index_row = 0
+        for row in self.matrix[level - 1]:
+            index_col = 0
+            for col in row:
+                if col == "@" or col == "+":
+                    worker = (index_row, index_col)
+                index_col += 1
+            index_row += 1
+        return worker
 
     def position(self, level):
         """
