@@ -1,0 +1,1203 @@
+C:\Users\shirs\anaconda3\python.exe "C:/Users/shirs/Google Drive/תיקיות מסודרות_/semester 7/אלגוריתמים אבולוציוניים/עבודה 2/ex2/Game.py"
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 45.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 7.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 81.81818181818181
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 8.333333333333332
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 14.0625
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 90.0
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 56.25
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 34.61538461538462
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 128.57142857142856
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 25.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 22.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 81.81818181818181
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 14.0625
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 90.0
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 25.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 22.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 109.0909090909091
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 90.0
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 22.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 109.0909090909091
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 90.0
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 22.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 90.0
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 22.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 90.0
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 22.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 52.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 60.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 4
+pattern = 300, box_in_dock = 0, number_box_move = 52.5
+level = 5
+pattern = 300, box_in_dock = 0, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 100, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 65.625
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 100, number_box_move = 97.5
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 25.0
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 18.75
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 100, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 25.0
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 100, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 25.0
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 41.66666666666667
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 100, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 66.66666666666666
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 100, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 68.18181818181817
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 66.66666666666666
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 81.81818181818181
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 66.66666666666666
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 66.66666666666666
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 66.66666666666666
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 66.66666666666666
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 33.33333333333333
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 41.66666666666667
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 41.66666666666667
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 41.66666666666667
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 85.71428571428571
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 100.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 10.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 41.66666666666667
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 85.71428571428571
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 125.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 50.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+level = 1
+pattern = 300, box_in_dock = 0, number_box_move = 0.0
+level = 2
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 3
+pattern = 300, box_in_dock = 0, number_box_move = 109.0909090909091
+level = 4
+pattern = 300, box_in_dock = 200, number_box_move = 105.0
+level = 5
+pattern = 300, box_in_dock = 100, number_box_move = 112.5
+level = 6
+pattern = 300, box_in_dock = 0, number_box_move = 105.0
+level = 7
+pattern = 300, box_in_dock = 200, number_box_move = 136.36363636363635
+level = 8
+pattern = 300, box_in_dock = 0, number_box_move = 41.66666666666667
+level = 9
+pattern = 300, box_in_dock = 0, number_box_move = 10.714285714285714
+level = 10
+pattern = 300, box_in_dock = 0, number_box_move = 23.4375
+level = 11
+pattern = 300, box_in_dock = 0, number_box_move = 85.71428571428571
+level = 12
+pattern = 300, box_in_dock = 0, number_box_move = 109.99999999999999
+level = 13
+pattern = 300, box_in_dock = 0, number_box_move = 75.0
+level = 14
+pattern = 300, box_in_dock = 0, number_box_move = 16.666666666666664
+level = 15
+pattern = 300, box_in_dock = 200, number_box_move = 46.15384615384615
+level = 16
+pattern = 300, box_in_dock = 200, number_box_move = 117.85714285714286
+level = 17
+pattern = 300, box_in_dock = 0, number_box_move = 125.0
+level = 18
+pattern = 300, box_in_dock = 0, number_box_move = 95.45454545454545
+level = 19
+pattern = 300, box_in_dock = 0, number_box_move = 50.0
+level = 20
+pattern = 300, box_in_dock = 100, number_box_move = 75.0
+
+Process finished with exit code 0

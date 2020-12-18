@@ -1,0 +1,8 @@
+    def evaluate(self, game, level, list_move):
+        n_patterns = 5 * self.measure.pattern(list_move)  # 0 <= 0 - 60 <= 300
+        box_in_dock = self.measure.count_left_box(game, level, "*")  # 0<= 0 - 100 <= count*100
+        number_box_move = 150 * self.measure.box_move(game, level)  # 0 <= 0 - 20 <= 200
+        return -number_box_move - box_in_dock + n_patterns
+        left_box = 100
+euclidean_distance = 1
+box_deadlock = 2
